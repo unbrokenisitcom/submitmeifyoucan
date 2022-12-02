@@ -1,0 +1,164 @@
+<div id="logo"> 
+    <h1><i> Parlons de SIDA</i></h1>
+  </div> 
+  <section class="stark-login">
+    
+    <form #f=ngForm>	
+      <div id="fade-box">
+        
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Prénom" formControlName="name" required>
+            <mat-error *ngFor="let validation of validation_messages.name">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('name').hasError(validation.type) && (userDetailsForm.get('name').dirty || userDetailsForm.get('name').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nom" formControlName="username" required>
+            <mat-error *ngFor="let validation of validation_messages.username">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('username').hasError(validation.type) && (userDetailsForm.get('username').dirty || userDetailsForm.get('username').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput type="email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngFor="let validation of account_validation_messages.email">
+              <mat-error class="error-message" *ngIf="accountDetailsForm.get('email').hasError(validation.type) && (accountDetailsForm.get('email').dirty || accountDetailsForm.get('email').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput  placeholder="Adresse" formControlName="adresse" required>
+            <mat-error *ngFor="let validation of validation_messages.adresse">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('adresse').hasError(validation.type) && (userDetailsForm.get('adresse').dirty || userDetailsForm.get('adresse').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ville" formControlName="adresse" required>
+            <mat-error *ngFor="let validation of validation_messages.ville">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('ville').hasError(validation.type) && (userDetailsForm.get('ville').dirty || userDetailsForm.get('ville').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          
+          <input matInput placeholder="(337) 00 00 00 00" type="tel" formControlName="phone" required>
+          <mat-error *ngFor="let validation of validation_messages.number">
+            <mat-error class="error-message" class="error-message" *ngIf="userDetailsForm.get('countryPhone').get('number').hasError(validation.type) && (userDetailsForm.get('countryPhone').get('number').dirty || userDetailsForm.get('countryPhone').get('number').touched)">
+              {{ validation.message }}
+            </mat-error>
+          </mat-error>
+
+          <mat-select placeholder="Sexe">
+            <mat-option *ngFor="let sexe of genders" [value]="sexe">
+              {{ sexe }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngFor="let validation of validation_messages.sexe">
+            <mat-error class="error-message" *ngIf="userDetailsForm.get('sexe').hasError(validation.type) && (userDetailsForm.get('sexe').dirty || userDetailsForm.get('sexe').touched)">{{validation.message}}</mat-error>
+          </mat-error>
+
+          <div class="custom-control custom-radio" name="sexe" id="sexe" display="inline-box">
+            <input id="male" type="radio"  value="male" name="gender" required>
+            <label class="custom-control-label" style=color:white  for="male">Masculin</label>
+         </div>
+        
+         <div class="custom-control custom-radio" name="sexe" id="sexe" >
+           <input id="female" type="radio"  value="female" name="gender" required>
+           <label class="custom-control-label" style="color:white;margin-bottom:-40%" for="female">Féminin</label>
+         </div>
+       
+       <!--  <h3 name="sym" id="sym" style=color:white>Les symptômes</h3>
+
+           <label for="vehicle1" style=color:white>Douleur au niveau des organes sexuels.</label>
+           <input type="checkbox" id="choix1" name="choix1" value="choix1">
+           <label for="vehicle2" style=color:white>Écoulement anormal par les organes sexuels</label>
+           <input type="checkbox" id="choix2" name="choix2" value="choix2">
+           <label for="vehicle3" style=color:white>Brulures, boutons ou verrues au niveau des organes sexuels</label>
+           <input type="checkbox" id="choix3" name="choix3" value="choix3">
+           <label for="vehicle3" style=color:white>Rougeurs des muqueuses</label>
+           <input type="checkbox" id="choix4" name="choix4" value="choix4">
+-->
+
+            <button (click)="submit()" style="background-color: #268E37; border-color: #268E37; color: black;" [disabled]=!f.valid>Envoyer</button> 
+          </div>
+        </form>
+        <div class="hexagons">
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <br>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <br>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span> 
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              <span>&#x2B22;</span>
+              
+              <br>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <span>&#x2B22;</span>
+                <br>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                  <span>&#x2B22;</span>
+                </div>      
+              </section> 
+              
+              <div id="circle1">
+                <div id="inner-cirlce1">
+                  <h2> </h2>
+                </div>
+              </div>
+              
+              
+         
+              
+              
+              
